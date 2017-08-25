@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       wget \
       unzip \
       sqlite3 \
+      gdal-bin \
     && wget --quiet http://naciscdn.org/naturalearth/packages/natural_earth_vector.sqlite.zip \
     && unzip -oj natural_earth_vector.sqlite.zip -d /import \
     && rm natural_earth_vector.sqlite.zip \
@@ -19,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       wget \
       unzip \
       sqlite3 \
+      gdal-bin \
     && rm -rf /var/lib/apt/lists/*
 
 CMD ["./import-natural-earth.sh"]
